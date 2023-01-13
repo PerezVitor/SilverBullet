@@ -47,7 +47,7 @@ function handleOperator(nextOperator) {
         if (result == 1000) {
             $("#bullet").attr("src", "https://media.tenor.com/X6r0LYNmyZ0AAAAC/bullet-sniper.gif");
             $("#bullet").show();
-            $("#bullet-text").append("Não existe bala de prata - Luiz, Felipe Estevam");
+            $("#bullet-text").append("Não existe bala de prata");
             $("#calculator").hide();
 
             setTimeout(function () {
