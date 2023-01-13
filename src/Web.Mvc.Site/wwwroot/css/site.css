@@ -63,4 +63,11 @@ button {
         height: 45%;
         grid-area: 2 / 4 / 6 / 5;
     }
+
+    .calculator-keys {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        /*grid-gap: 8px;*/
+        padding: 8px;
+    }
 }
