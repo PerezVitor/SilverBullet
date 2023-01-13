@@ -1,0 +1,34 @@
+name: BuildAndDeploy
+
+on:
+  push:
+    branches: [ develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+        - uses: actions/checkout@v3
+
+        - name: Setup .NET Core
+          uses: actions/setup-dotnet@v1
+          with:
+            dotnet-version: 6.0.x
+
+        - name: Install dependencies
+          run: dotnet restore ./src
+  
+        - name: Build with dotnet
+          run: dotnet build ./src --configuration Release --no-restore
+
+        - name: Publish
+          run: dotnet publish ./src --configuration Release --output ./publish
+          
+        - name: FTP Deploy
+          uses: SamKirkland/FTP-Deploy-Action@4.3.3
+          with:
+            server: ${{ secrets.ftp_server_develop }}
+            username: ${{ secrets.ftp_username_develop }}
+            password: ${{ secrets.ftp_password_develop }}
+            local-dir: ./publish/

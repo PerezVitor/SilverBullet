@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div id="calculator" class="container calculator card">
+
+    <input type="text" class="calculator-screen z-depth-1" value="" disabled />
+
+    <div class="calculator-keys">
+        
+        <button id="calculator-adic" value="+">+</button>
+        <button id="calculator-subt" value="-">-</button>
+        <button id="calculator-mult" value="*">&times;</button>
+        <button id="calculator-divs" value="/">&divide;</button>
+
+        @for (int i = 7; i < 10; i++)
+        {
+            <button value="@i" class="button-number">@i</button>
+        }
+
+        @for (int i = 4; i < 7; i++)
+        {
+            <button value="@i" class="button-number">@i</button>
+        }
+
+        @for (int i = 1; i < 4; i++)
+        {
+            <button value="@i" class="button-number">@i</button>
+        }
+
+        <button value="0" class="button-number">0</button>
+        <button class="decimal function btn btn-secondary" value=".">.</button>
+        <button class="all-clear function btn btn-warning btn-sm" value="all-clear">AC</button>
+
+        <button class="equal-sign operator btn btn-dark" value="=">=</button>
+    </div>
+</div>
+
+<img id="bullet" width="50%" height="50%">
+<h4 id="bullet-text"></h4>
