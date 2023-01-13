@@ -58,4 +58,9 @@ button {
         width: 350px;
         height: 90%;
     }
+
+    .equal-sign {
+        height: 45%;
+        grid-area: 2 / 4 / 6 / 5;
+    }
 }
