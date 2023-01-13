@@ -45,3 +45,22 @@ button {
     grid-gap: 20px;
     padding: 20px;
 }
+
+@media only screen and (max-width: 600px) {
+    button {
+        height: 50%;
+        font-size: 2rem !important;
+    }
+
+    .calculator {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 350px;
+        height: 90%;
+    }
+
+    .equal-sign {
+        height: 45%;
+        grid-area: 2 / 4 / 6 / 5;
+    }
+}
